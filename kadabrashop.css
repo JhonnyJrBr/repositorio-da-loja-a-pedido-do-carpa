@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: #0b071a;
+    color: #f3f4f6;
+    padding: 40px 20px;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cabecalho h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cabecalho p {
+    font-size: 1.2rem;
+    color: #9ca3af;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.categoria-secao {
+    margin-bottom: 60px;
+}
+
+
+.categoria-secao h2 {
+    font-size: 1.6rem;
+    color: #e9d5ff; /* Roxo bem claro */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #7c3aed; /* Linha Violeta */
+    position: relative;
+    text-transform: capitalize;
+}
+
+
+.categoria-secao h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #fbbf24; /* Amarelo/Dourado do Kadabra */
+}
+
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+
+.card {
+    background: #161129; /* Roxo escuro profundo */
+    border-radius: 12px;
+    overflow: hidden;
+    /* Sombra neon suave em tom violeta */
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2e234d; /* Borda roxa sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #a78bfa;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: scale-down;
+    padding: 20px;
+    background-color: #1e1836; /* Fundo ligeiramente diferente para destacar a foto do produto */
+}
+
+
+.card-info {
+    padding: 20px;
+    background: #161129;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid #2e234d;
+    margin-top: auto; /* Mantém os textos alinhados abaixo da imagem */
+}
+
+.card-info h3 {
+    font-size: 1.15rem;
+    color: #f3f4f6;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: lowercase; /* Mantém o estilo minúsculo que você usou no seu HTML */
+}
+
+
+.preco {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fbbf24; 
+}
+
+
+.link-ver-mais {
+    display: inline-block;
+    margin-top: 10px;
+    color: #a78bfa;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.link-ver-mais:hover {
+    color: #ddd6fe;
+    text-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+    text-decoration: underline;}
