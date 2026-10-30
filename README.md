@@ -1,0 +1,1 @@
+# repositorio-da-loja-a-pedido-do-carpa
