@@ -1,97 +1,231 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kadabra shop</title>
+
+    <title>Kadabra Shop</title>
+
     <link rel="stylesheet" href="kadabrashop.css">
+    <script src="cadastro.js" defer></script>
 </head>
-<body>
+
+<link rel="stylesheet" href="kadabrashop.css">
+<link rel="stylesheet" href="carrinho.css">
+
+<script src="cadastro.js" defer></script>
+<script src="carrinho.js" defer></script>
+
+<body id="paginaLoja">
 
     <header class="cabecalho">
-        <h1>kadabra empresas</h1>
-        <p>atendendo aos mais diversos interesses</p>
+
+     <button class="botao-carrinho" id="abrirCarrinho">
+
+    <span class="icone-carrinho">🛒</span>
+
+    <span class="texto-carrinho">Carrinho</span>
+
+    <span id="quantidadeCarrinho">0</span>
+
+</button>
+
+        <div class="perfil-usuario">
+
+            <div class="icone-perfil">👤</div>
+
+            <div class="informacoes-perfil">
+                <span>Bem-vindo(a)!</span>
+                <strong id="nomeUsuario">Usuário</strong>
+            </div>
+
+            <button class="botao-sair" onclick="sairDaConta()">
+                Sair
+            </button>
+
+        </div>
+
+        <h1>Kadabra Empresas</h1>
+        <p>Atendendo aos mais diversos interesses</p>
+
     </header>
+
+
+    <div class="fundo-carrinho" id="fundoCarrinho"></div>
+
+    
+
+<aside class="painel-carrinho" id="painelCarrinho">
+
+    <div class="cabecalho-carrinho">
+        <h2>🛒 Seu Carrinho</h2>
+
+        <<button id="fecharCarrinho" class="fechar-carrinho">
+    ✕
+</button>
+    </div>
+
+    <div id="listaCarrinho" class="lista-carrinho">
+    </div>
+
+    <div class="rodape-carrinho">
+
+        <div class="total-carrinho">
+            <span>Total:</span>
+            <strong id="totalCarrinho">R$ 0,00</strong>
+        </div>
+
+        <button id="finalizarCompra" class="botao-finalizar">
+            Finalizar compra
+        </button>
+
+    </div>
+
+
+<div id="etapaPagamento" class="etapa-pagamento" style="display: none;">
+
+    <h2>Forma de pagamento</h2>
+
+    <p>Escolha como deseja pagar:</p>
+
+    <div class="opcoes-pagamento">
+
+        <button type="button" class="opcao-pagamento" data-pagamento="pix">
+            💠 PIX
+        </button>
+
+        <button type="button" class="opcao-pagamento" data-pagamento="credito">
+            💳 Cartão de crédito
+        </button>
+
+        <button type="button" class="opcao-pagamento" data-pagamento="debito">
+            💳 Cartão de débito
+        </button>
+
+    </div>
+
+    <div id="detalhesPagamento" class="detalhes-pagamento">
+        <p>Selecione uma forma de pagamento acima.</p>
+    </div>
+
+    <button id="confirmarPagamento" class="botao-finalizar" type="button">
+        Confirmar pedido
+    </button>
+
+    <button id="voltarCarrinho" class="botao-voltar" type="button">
+        Voltar ao carrinho
+    </button>
+
+</div>
+    
+</aside>
 
     <main class="container">
 
         <section class="categoria-secao">
-            <h2>equipamentos de boxe</h2>
+
+            <h2>Equipamentos de boxe</h2>
+
             <div class="catalogo-grid">
+
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsDsxcMdxIyDn4uvRa7LY10kHCGWGxLdpA_SEhnsUHAQ&s=10" alt="luvas de boxe">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsDsxcMdxIyDn4uvRa7LY10kHCGWGxLdpA_SEhnsUHAQ&s=10" alt="Luvas de boxe">
+
                     <div class="card-info">
-                        <h3>luvas de boxe</h3>
+                        <h3>Luvas de boxe</h3>
                         <span class="preco">R$ 250,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1n2_umpVNxW_7TzK86WyvWXxnTWZT_1L1XlUWg5ed2Q&s=10" alt="saco de pancada">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1n2_umpVNxW_7TzK86WyvWXxnTWZT_1L1XlUWg5ed2Q&s=10" alt="Saco de pancada">
+
                     <div class="card-info">
-                        <h3>saco de pancada</h3>
+                        <h3>Saco de pancada</h3>
                         <span class="preco">R$ 400,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BXwzigGSkav-iLL_UW-xoF3mnn5_QL3n1jiCjDtNdQ&s=10" alt="tenis esportivos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BXwzigGSkav-iLL_UW-xoF3mnn5_QL3n1jiCjDtNdQ&s=10" alt="Tênis esportivos">
+
                     <div class="card-info">
-                        <h3>sapatos esportivos</h3>
+                        <h3>Sapatos esportivos</h3>
                         <span class="preco">R$ 355,00</span>
                     </div>
                 </article>
+
             </div>
-            <a href="equipamentosdeboxe.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
+
+            <a href="equipamentosdeboxe.html" class="link-ver-mais">
+                Para ver mais produtos clique aqui
+            </a>
+
         </section>
 
 
         <section class="categoria-secao">
-            <h2>jogos de tabuleiro</h2>
+
+            <h2>Jogos de tabuleiro</h2>
+
             <div class="catalogo-grid">
+
                 <article class="card">
-                    <img src="https://images.tcdn.com.br/img/img_prod/587775/jogos_de_tabuleiro_jogo_trilha_escolar_18_pecas_em_madeira_1277_1_5a9bc42b4bb52deb2efc2f01079abc77.jpg" alt="jogo de tabuleiro trilha escolar">
+                    <img src="https://images.tcdn.com.br/img/img_prod/587775/jogos_de_tabuleiro_jogo_trilha_escolar_18_pecas_em_madeira_1277_1_5a9bc42b4bb52deb2efc2f01079abc77.jpg" alt="Jogo de trilha">
+
                     <div class="card-info">
-                        <h3>tabuleiro trilha escolar</h3>
+                        <h3>Tabuleiro trilha escolar</h3>
                         <span class="preco">R$ 30,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKOM7tAWx6dfhCHOpEWRDBAqJA6XXh5aVlBLA_6h84w&s=10" alt="tabuleiro de xadrez de vidro">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjKOM7tAWx6dfhCHOpEWRDBAqJA6XXh5aVlBLA_6h84w&s=10" alt="Xadrez de vidro">
+
                     <div class="card-info">
-                        <h3>tabuleiro de xadrez feito de vidro</h3>
+                        <h3>Tabuleiro de xadrez de vidro</h3>
                         <span class="preco">R$ 200,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJ9Ll1kGiGnfY0zgBAlaMu1Hl-AduDqTtdb4uH9kIAw&s=10" alt="baril pirata">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJ9Ll1kGiGnfY0zgBAlaMu1Hl-AduDqTtdb4uH9kIAw&s=10" alt="Barril pirata">
+
                     <div class="card-info">
-                        <h3>brinquedo baril pirata</h3>
+                        <h3>Brinquedo barril pirata</h3>
                         <span class="preco">R$ 40,00</span>
                     </div>
                 </article>
+
             </div>
-            <a href="brinquedos.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
+
+            <a href="brinquedos.html" class="link-ver-mais">
+                Para ver mais produtos clique aqui
+            </a>
+
         </section>
 
-      
-        
-    
+
         <section class="categoria-secao">
-            <h2>instrumentos musicais</h2>
+
+            <h2>Instrumentos musicais</h2>
+
             <div class="catalogo-grid">
+
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrPAwy1_y8EzerPSzF0CmZIPFV0TY6yftUqWYGs3HQQ&s=10" alt="saxofone">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrPAwy1_y8EzerPSzF0CmZIPFV0TY6yftUqWYGs3HQQ&s=10" alt="Saxofone">
+
                     <div class="card-info">
-                        <h3>saxofone</h3>
-                        <span class="preco">R$ 1500,00</span>
+                        <h3>Saxofone</h3>
+                        <span class="preco">R$ 1.500,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIriIiUbf57mN_FLzC2_gTkc5EwymCCJKXI5dujGbv7w&s=10" alt="hu">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIriIiUbf57mN_FLzC2_gTkc5EwymCCJKXI5dujGbv7w&s=10" alt="Instrumento musical HU">
+
                     <div class="card-info">
                         <h3>HU</h3>
                         <span class="preco">R$ 300,00</span>
@@ -99,107 +233,106 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgq4jDzc137uMip6GcZOraAIWdm6eSgCTPti9zyEAeYQ&s=10" alt="chifre">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgq4jDzc137uMip6GcZOraAIWdm6eSgCTPti9zyEAeYQ&s=10" alt="Chifre de caça">
+
                     <div class="card-info">
-                        <h3>chifre de caça</h3>
-                        <span class="preco">R$ 4000,00</span>
+                        <h3>Chifre de caça</h3>
+                        <span class="preco">R$ 4.000,00</span>
                     </div>
                 </article>
+
             </div>
-            <a href="instrumentos.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
-        </section>
 
-  
-        <section class="categoria-secao">
-            <h2>jogos digitais</h2>
-            <div class="catalogo-grid">
-                <article class="card">
-                    <img src="Nexoria_ Aventura Pixelada Fantástica (1).png" alt="nexoria">
-                    <div class="card-info">
-                        <h3>nexoria</h3>
-                        <span class="preco">R$ 50,00</span>
-                    </div>
-                </article>
+            <a href="instrumentos.html" class="link-ver-mais">
+                Para ver mais produtos clique aqui
+            </a>
 
-                <article class="card">
-                    <img src="image.png" alt="myrrital">
-                    <div class="card-info">
-                        <h3>myrrital</h3>
-                        <span class="preco">R$ 50,00</span>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="Gemini_Generated_Image_q4lg2mq4lg2mq4lg.jpg" alt="skylord">
-                    <div class="card-info">
-                        <h3>skylord</h3>
-                        <span class="preco">R$ 50,00</span>
-                    </div>
-                </article>
-            </div>
-            <a href="jogosdigitais.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
         </section>
 
 
         <section class="categoria-secao">
-            <h2>miniaturas e action figures</h2>
+
+            <h2>Jogos digitais</h2>
+
             <div class="catalogo-grid">
+
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkUEzw0lS2rD24HWaZ4JeAKmCeJelOIqHAeupb2c72A&s=10" alt="action figure goku ssj1">
+                    <img src="Nexoria_ Aventura Pixelada Fantástica (1).png" alt="Nexoria">
+
                     <div class="card-info">
-                        <h3>goku ssj1</h3>
+                        <h3>Nexoria</h3>
+                        <span class="preco">R$ 50,00</span>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="image.png" alt="Myrrital">
+
+                    <div class="card-info">
+                        <h3>Myrrital</h3>
+                        <span class="preco">R$ 50,00</span>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="Gemini_Generated_Image_q4lg2mq4lg2mq4lg.jpg" alt="Skylord">
+
+                    <div class="card-info">
+                        <h3>Skylord</h3>
+                        <span class="preco">R$ 50,00</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <a href="jogosdigitais.html" class="link-ver-mais">
+                Para ver mais produtos clique aqui
+            </a>
+
+        </section>
+
+
+        <section class="categoria-secao">
+
+            <h2>Miniaturas e action figures</h2>
+
+            <div class="catalogo-grid">
+
+                <article class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkUEzw0lS2rD24HWaZ4JeAKmCeJelOIqHAeupb2c72A&s=10" alt="Goku SSJ1">
+
+                    <div class="card-info">
+                        <h3>Goku SSJ1</h3>
                         <span class="preco">R$ 55,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIHK-3wkULqlE3yaBYVSrLApcwbzsux7SWItrw6-pKw&s=10" alt="eva">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjIHK-3wkULqlE3yaBYVSrLApcwbzsux7SWItrw6-pKw&s=10" alt="Eva">
+
                     <div class="card-info">
-                        <h3>eva</h3>
+                        <h3>Eva</h3>
                         <span class="preco">R$ 50,00</span>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPpKkZmetRFG4A9k8ZWeKprP20TC5-xSyms5GRTJD9Q&s=10" alt="tanjiro kamado demon slayer">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPpKkZmetRFG4A9k8ZWeKprP20TC5-xSyms5GRTJD9Q&s=10" alt="Tanjiro Kamado">
+
                     <div class="card-info">
-                        <h3>tanjiro kamado</h3>
+                        <h3>Tanjiro Kamado</h3>
                         <span class="preco">R$ 50,00</span>
                     </div>
                 </article>
+
             </div>
-            <a href="miniaturaseactionfigures.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
+
+            <a href="miniaturaseactionfigures.html" class="link-ver-mais">
+                Para ver mais produtos clique aqui
+            </a>
+
         </section>
 
-        <section class="categoria-secao">
-            <h2>equipamentos eletronicos</h2>
-            <div class="catalogo-grid">
-                <article class="card">
-                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQE07Vx_-iR2z7e6l1sLiViPXEOO2UFLaRKdmkXLkmzuPoZ_ZBWixL8up_hqvYibI6IRzYCYvNF08GFv21xtKzbkMdHdn46jWLSKFECZEzd8NBo6SNMUnI" alt="Processador AMD Ryzen 5 5600GT" >
-                    <div class="card-info">
-                        <h3>Processador AMD Ryzen 5 5600GT</h3>
-                        <span class="preco">R$ 599,00</span>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTbY36oajQYbgKoY9o5sslZwiHmRTXBvBwb8WcbGrOw38Ys0rEeD_r_FxYenZ9rZAHt2GbL4x2SJ1v8iV8Ql314cbLC_urMpVKw8h8mfPAOJavPjn7zbw" alt="Processador AMD Ryzen 5 5500 3.6GHz" style="width: 300px; height: 300px;">
-                    <div class="card-info">
-                        <h3>Processador AMD Ryzen 5 5500 3.6GHz</h3>
-                        <span class="preco">R$ 509,99,00</span>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRxn0WY5bSU0IjjypJjqVsnPYymQk_lGM0U1TLMv1373RB-MezuLm43pATR9I7qYglqfMMtHjko_7M8T6zufyDp0wFGB0YZsA" alt="Monitor Gamer LG UltraGear 24' 180Hz 1ms" style="width: 300px; height: 300px;">
-                    <div class="card-info">
-                        <h3>Monitor Gamer LG UltraGear 24" 180Hz 1ms</h3>
-                        <span class="preco">R$ 1.116,00</span>
-                    </div>
-                </article>
-            </div>
-            <a href="eletronicos.html" class="link-ver-mais">para ver mais produtos clique aqui</a>
-        </section>
     </main>
 
 </body>
